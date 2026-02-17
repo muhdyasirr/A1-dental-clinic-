@@ -9,7 +9,7 @@ export default function Hero() {
       {/* RIGHT SIDE HERO IMAGE */}
       <div className="absolute inset-y-0 right-0 w-[60%]">
         <Image
-          src="/MAIN.jpg"
+          src="/main1.jpg"
           alt="Dental wireframe"
           fill
           priority
