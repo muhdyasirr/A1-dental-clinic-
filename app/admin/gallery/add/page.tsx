@@ -74,7 +74,7 @@ export default function AddGalleryImage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 p-6 md:p-12 flex items-center justify-center">
+    <div className="min-h-screen bg-gray-50 p-4 md:p-12 flex items-center justify-center">
       <div className="w-full max-w-2xl">
         <div className="mb-8">
           <Link
@@ -85,7 +85,7 @@ export default function AddGalleryImage() {
           </Link>
         </div>
 
-        <div className="bg-white rounded-[2.5rem] shadow-2xl shadow-gray-200/50 p-10 md:p-14 border border-gray-100">
+        <div className="bg-white rounded-[2.5rem] shadow-2xl shadow-gray-200/50 p-6 md:p-14 border border-gray-100">
           <div className="mb-10 text-center">
             <h1 className="text-3xl font-bold text-gray-800 tracking-tight">
               Add New Image

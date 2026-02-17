@@ -42,7 +42,7 @@ export default function GallerySection() {
         {images.map((img) => (
           <div
             key={img._id}
-            className="group relative overflow-hidden h-[500px] border-2 border-dotted border-gray-300 m-[-2px]" // Negative margin to overlap borders
+            className="group relative overflow-hidden h-80 md:h-96 lg:h-[500px] border-2 border-dotted border-gray-300 m-[-2px]" // Negative margin to overlap borders
           >
             {/* IMAGE */}
             <img

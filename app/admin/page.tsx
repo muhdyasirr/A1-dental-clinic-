@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function AdminDashboard() {
   return (
-    <div className="p-10">
+    <div className="p-6 md:p-10">
       <div className="max-w-4xl mx-auto">
         {/* WELCOME */}
         <div className="mb-12 text-center">

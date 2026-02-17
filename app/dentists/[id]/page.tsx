@@ -41,23 +41,23 @@ export default function DentistDetails({
     <>
       <Navbar />
 
-      <section className="h-screen grid lg:grid-cols-2 bg-white overflow-hidden">
+      <section className="min-h-screen grid lg:grid-cols-2 bg-white overflow-hidden">
         {/* LEFT — IMAGE */}
-        <div className="relative flex items-center justify-center bg-gray-50">
+        <div className="relative w-full h-[50vh] lg:h-auto flex items-center justify-center bg-gray-50">
           <Image
             src={dentist.imageUrl}
             alt={dentist.name}
             fill
             priority
-            className="object-contain"
+            className="object-cover lg:object-contain"
           />
         </div>
 
         {/* RIGHT — CONTENT */}
         <div className="flex items-center">
-          <div className="max-w-3xl px-10 lg:px-20 py-16">
+          <div className="max-w-3xl px-6 py-12 lg:px-20 lg:py-16">
             {/* NAME */}
-            <h1 className="text-5xl font-medium text-gray-900 leading-tight">
+            <h1 className="text-4xl lg:text-5xl font-medium text-gray-900 leading-tight">
               {dentist.name}
             </h1>
 

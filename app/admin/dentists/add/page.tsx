@@ -37,74 +37,74 @@ export default function AddDentist() {
     e.preventDefault();
     console.log("Submit started");
     if (!image) {
-    alert("Please upload an image");
-    return;
-  }
+      alert("Please upload an image");
+      return;
+    }
 
-  setLoading(true);
-
-  try {
-    /* ---------- IMAGE UPLOAD ---------- */
-    const formData = new FormData();
-    formData.append("file", image);
-
-    const uploadRes = await fetch("/api/upload", {
-      method: "POST",
-      body: formData,
-    });
-
-    const uploadText = await uploadRes.text();
-    console.log("Upload response text:", uploadText);
-    let uploadData;
+    setLoading(true);
 
     try {
-      uploadData = JSON.parse(uploadText);
-    } catch {
-      console.error("UPLOAD API RETURNED NON-JSON:", uploadText);
-      throw new Error("Upload API error");
+      /* ---------- IMAGE UPLOAD ---------- */
+      const formData = new FormData();
+      formData.append("file", image);
+
+      const uploadRes = await fetch("/api/upload", {
+        method: "POST",
+        body: formData,
+      });
+
+      const uploadText = await uploadRes.text();
+      console.log("Upload response text:", uploadText);
+      let uploadData;
+
+      try {
+        uploadData = JSON.parse(uploadText);
+      } catch {
+        console.error("UPLOAD API RETURNED NON-JSON:", uploadText);
+        throw new Error("Upload API error");
+      }
+
+      if (!uploadRes.ok) {
+        throw new Error(uploadData?.error || "Image upload failed");
+      }
+
+      /* ---------- CREATE DENTIST ---------- */
+      const dentistData = {
+        ...form,
+        imageUrl: uploadData.secure_url,
+      };
+
+      const res = await fetch("/api/dentists", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(dentistData),
+      });
+
+      const resultText = await res.text();
+      console.log("Dentist response text:", resultText);
+      let result;
+
+      try {
+        result = JSON.parse(resultText);
+      } catch {
+        console.error("DENTIST API RETURNED NON-JSON:", resultText);
+        throw new Error("Dentist API error");
+      }
+
+      if (!res.ok) {
+        throw new Error(result?.error || "Failed to create dentist");
+      }
+
+      router.push("/admin/dentists");
+    } catch (err: any) {
+      console.error(err);
+      alert(err.message || "Something went wrong");
+    } finally {
+      setLoading(false);
     }
-
-    if (!uploadRes.ok) {
-      throw new Error(uploadData?.error || "Image upload failed");
-    }
-
-    /* ---------- CREATE DENTIST ---------- */
-    const dentistData = {
-      ...form,
-      imageUrl: uploadData.secure_url,
-    };
-
-    const res = await fetch("/api/dentists", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(dentistData),
-    });
-
-    const resultText = await res.text();
-    console.log("Dentist response text:", resultText);
-    let result;
-
-    try {
-      result = JSON.parse(resultText);
-    } catch {
-      console.error("DENTIST API RETURNED NON-JSON:", resultText);
-      throw new Error("Dentist API error");
-    }
-
-    if (!res.ok) {
-      throw new Error(result?.error || "Failed to create dentist");
-    }
-
-    router.push("/admin/dentists");
-  } catch (err: any) {
-    console.error(err);
-    alert(err.message || "Something went wrong");
-  } finally {
-    setLoading(false);
-  }
-};
+  };
   return (
-    <div className="min-h-screen bg-gray-50 p-6 md:p-12 flex items-center justify-center">
+    <div className="min-h-screen bg-gray-50 p-4 md:p-12 flex items-center justify-center">
       <div className="w-full max-w-3xl">
         <div className="mb-8">
           <Link
@@ -115,7 +115,7 @@ export default function AddDentist() {
           </Link>
         </div>
 
-        <div className="bg-white rounded-[2.5rem] shadow-2xl shadow-gray-200/50 p-10 md:p-14 border border-gray-100">
+        <div className="bg-white rounded-[2.5rem] shadow-2xl shadow-gray-200/50 p-6 md:p-14 border border-gray-100">
           <div className="mb-10 text-center">
             <h1 className="text-3xl font-bold text-gray-800 tracking-tight">
               Add Specialist
@@ -211,11 +211,10 @@ export default function AddDentist() {
               />
 
               <p
-                className={`text-sm text-right ${
-                  countWords(form.description) >= 180
+                className={`text-sm text-right ${countWords(form.description) >= 180
                     ? "text-red-500"
                     : "text-gray-400"
-                }`}
+                  }`}
               >
                 {countWords(form.description)} / {MAX_WORDS} words
               </p>

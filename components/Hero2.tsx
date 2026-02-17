@@ -5,12 +5,12 @@ import Link from "next/link";
 
 export default function AboutSection() {
   return (
-    <section className="bg-white py-28 px-6">
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
+    <section className="bg-white py-20 px-4 md:px-8">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
         {/* LEFT — BIG IMAGE */}
         <div className="relative flex justify-center lg:justify-start">
-          <div className="relative w-[480px] h-[580px] rounded-[32px] overflow-hidden shadow-xl">
+          <div className="relative w-full max-w-[480px] aspect-[4/5] lg:h-[580px] rounded-[32px] overflow-hidden shadow-xl">
             <Image
               src="/IMG_7705.jpg"
               alt="Dental treatment"
@@ -34,7 +34,7 @@ export default function AboutSection() {
           </h2>
 
           <p className="mt-6 text-gray-600 leading-relaxed">
-           Our clinic is dedicated to delivering compassionate, tailored care and the highest standard of cosmetic and specialist dental treatments using modern techniques and advanced practices.
+            Our clinic is dedicated to delivering compassionate, tailored care and the highest standard of cosmetic and specialist dental treatments using modern techniques and advanced practices.
           </p>
 
           <div className="mt-8 grid grid-cols-2 gap-4 text-gray-700">
@@ -53,7 +53,7 @@ export default function AboutSection() {
             ))}
           </div>
 
-          
+
 
         </div>
       </div>

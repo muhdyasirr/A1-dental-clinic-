@@ -58,7 +58,7 @@ export default function AdminDentists() {
     );
 
   return (
-    <div className="min-h-screen bg-gray-50 p-6 md:p-12 font-sans">
+    <div className="min-h-screen bg-gray-50 p-4 md:p-12 font-sans">
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
@@ -155,11 +155,11 @@ export default function AdminDentists() {
             </table>
           </div>
         </div>
-        
+
         <div className="mt-12 text-center">
-            <Link href="/" className="text-gray-400 hover:text-gray-600 text-sm font-medium transition">
-              ← Back to Main Site
-            </Link>
+          <Link href="/" className="text-gray-400 hover:text-gray-600 text-sm font-medium transition">
+            ← Back to Main Site
+          </Link>
         </div>
       </div>
     </div>

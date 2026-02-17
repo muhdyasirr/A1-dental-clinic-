@@ -9,12 +9,26 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email === "admin@gmail.com" && password === "admin123") {
-      login();
-    } else {
-      setError("Invalid credentials");
+    setError("");
+
+    try {
+      const res = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        login(); // Context login (sets state)
+      } else {
+        setError(data.error || "Invalid credentials");
+      }
+    } catch (err) {
+      setError("Something went wrong. Please try again.");
     }
   };
 

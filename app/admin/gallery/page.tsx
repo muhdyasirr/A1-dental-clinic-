@@ -57,7 +57,7 @@ export default function AdminGallery() {
     );
 
   return (
-    <div className="min-h-screen bg-gray-50 p-6 md:p-12 font-sans">
+    <div className="min-h-screen bg-gray-50 p-4 md:p-12 font-sans">
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
@@ -140,11 +140,11 @@ export default function AdminGallery() {
             </table>
           </div>
         </div>
-        
+
         <div className="mt-12 text-center">
-            <Link href="/admin" className="text-gray-400 hover:text-gray-600 text-sm font-medium transition">
-              ← Back to Admin Dashboard
-            </Link>
+          <Link href="/admin" className="text-gray-400 hover:text-gray-600 text-sm font-medium transition">
+            ← Back to Admin Dashboard
+          </Link>
         </div>
       </div>
     </div>
