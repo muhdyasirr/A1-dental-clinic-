@@ -8,28 +8,28 @@ export default function Hero() {
       
       {/* RIGHT SIDE HERO IMAGE */}
       <div className="absolute inset-y-0 right-0 w-[60%]">
-        <Image
-          src="/main1.jpg"
-          alt="Dental wireframe"
-          fill
-          priority
-          className="object-cover object-right"
-        />
-      </div>
-
-      {/* TOP-LEFT BRANDING */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 ml-3">
-        <div className="max-w-xl">
-
-          {/* LOGO */}
           <Image
-            src="/A1logo.png"
-            alt="A1 Dental Clinic & Aesthetic Centre"
-            width={590}
-            height={390}
+            src="/hero-main.jpg"
+            alt="Dental wireframe"
+            fill
             priority
-            className="object-contain"
+            className="object-cover object-right"
           />
+        </div>
+
+        {/* TOP-LEFT BRANDING */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 ml-3">
+          <div className="max-w-xl">
+
+            {/* LOGO */}
+            <Image
+              src="/A1Logo.png"
+              alt="A1 Dental Clinic & Aesthetic Centre"
+              width={590}
+              height={390}
+              priority
+              className="object-contain"
+            />
 
           {/* MAIN HERO LINE */}
           <p className="mt-8 ml-5 text-5xl text-gray-900 leading-snug">
