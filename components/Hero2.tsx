@@ -12,7 +12,7 @@ export default function AboutSection() {
         <div className="relative flex justify-center lg:justify-start">
           <div className="relative w-full max-w-[480px] aspect-[4/5] lg:h-[580px] rounded-[32px] overflow-hidden shadow-xl">
             <Image
-              src="/IMG_7705.jpg"
+              src="/Hero2.jpeg"
               alt="Dental treatment"
               fill
               className="object-cover"
