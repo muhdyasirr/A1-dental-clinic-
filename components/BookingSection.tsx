@@ -67,7 +67,7 @@ export default function ContactConsultation() {
               icon={<ClockIcon />}
               title={
                 <>
-                  Mon – Sat : 9:30 AM – 7:00 PM<br />
+                  Mon – Sat : 9:30 AM – 7:30 PM<br />
                   Sunday : Appointment Only
                 </>
               }
