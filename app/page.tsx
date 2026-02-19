@@ -7,6 +7,8 @@ import BookingSection from "@/components/BookingSection";
 import Services from "@/components/Services";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Footer from "@/components/Footer";
+import OurVision from "@/components/OurVision";
+import Chief from "@/components/Chief";
 
 export default function Home() {
   return (
@@ -15,7 +17,9 @@ export default function Home() {
       <Hero />
       <Hero2 />
       <Services />
+      <OurVision />
       <WhyChooseUs />
+      <Chief />
       <DentistSection />
       <GallerySection />
       <BookingSection />

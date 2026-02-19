@@ -9,10 +9,10 @@ export default function WhyChooseUs() {
         {/* HEADER */}
         <div className="text-center mb-24">
           <p className="text-sm tracking-widest text-blue-600 uppercase font-semibold mb-4">
-            Why Choose Us
+
           </p>
           <h2 className="text-4xl md:text-5xl font-semibold text-gray-900">
-            Diagnosis of Dental Diseases
+            Why Choose A1 Dental Clinic ?
           </h2>
           <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
             We are committed to sustainability, eco-friendly initiatives.
