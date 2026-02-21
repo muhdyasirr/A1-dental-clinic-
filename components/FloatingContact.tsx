@@ -27,7 +27,7 @@ export default function FloatingContact() {
 
     const instagramUrl =
         "https://www.instagram.com/a1dentalclinic?igsh=aG1kbXQzcW5sazZq&utm_source=qr";
-    const whatsappUrl = "https://wa.me/9195626039900";
+    const whatsappUrl = "https://wa.me/919562603990";
     const phoneUrl = "tel:+919562603990";
 
     return (
