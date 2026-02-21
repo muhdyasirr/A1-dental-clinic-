@@ -9,7 +9,7 @@ export default function OurVisionPerson() {
 
                 {/* SECTION HEADING */}
                 <h2 className="text-center text-2xl tracking-widest text-gray-500 uppercase mb-16">
-                    Our Vision
+                    Our Management
                 </h2>
 
                 {/* CONTENT */}
