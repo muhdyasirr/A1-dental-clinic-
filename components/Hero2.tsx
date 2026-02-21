@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function AboutSection() {
   return (
-    <section className="bg-white py-20 px-4 md:px-8">
+    <section id="hero2-section" className="bg-white py-20 px-4 md:px-8">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
         {/* LEFT — BIG IMAGE */}

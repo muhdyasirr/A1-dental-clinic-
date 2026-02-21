@@ -9,6 +9,7 @@ import WhyChooseUs from "@/components/WhyChooseUs";
 import Footer from "@/components/Footer";
 import OurVision from "@/components/OurVision";
 import Chief from "@/components/Chief";
+import FloatingContact from "@/components/FloatingContact";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
       <DentistSection />
       <GallerySection />
       <BookingSection />
+      <FloatingContact />
       <Footer />
     </>
   );
