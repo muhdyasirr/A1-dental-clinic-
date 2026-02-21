@@ -22,8 +22,8 @@ export default function OurVisionPerson() {
                             <Image
                                 src="/vision.PNG"
                                 alt="Vision Person"
-                                width={420}     // adjust if needed
-                                height={420}    // adjust if needed
+                                width={350}     // adjust if needed
+                                height={400}    // adjust if needed
                                 className="object-contain"
                                 priority
                             />
