@@ -7,6 +7,7 @@ export interface IDentist extends Document {
     description: string;
     imageUrl: string;
     contact?: string;
+    order: number;
     createdAt: Date;
     updatedAt: Date;
 }
@@ -19,6 +20,7 @@ const DentistSchema: Schema = new Schema(
         description: { type: String, required: true },
         imageUrl: { type: String, required: true },
         contact: { type: String, required: false },
+        order: { type: Number, default: 0 },
     },
     {
         timestamps: true,

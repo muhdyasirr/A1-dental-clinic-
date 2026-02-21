@@ -1,5 +1,81 @@
 "use client";
 
+import { ReactNode } from "react";
+
+/* ---------- ICONS ---------- */
+
+const icons: Record<string, ReactNode> = {
+  "General Dentistry": (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} className="w-7 h-7">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 2C9 2 6 4.5 6 7.5c0 1.5.5 3 1 4.5L8 17c.5 2 1.5 3 2.5 3s1.5-1 2-2c.5 1 1 2 2 2s2-1 2.5-3l1-5c.5-1.5 1-3 1-4.5C19 4.5 15 2 12 2z" />
+    </svg>
+  ),
+  "Endodontics (Root Canal & Conservative Dentistry)": (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} className="w-7 h-7">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v5m0 0c-2 0-4 1.5-4 4 0 1.5.5 2.5 1 3.5L10 19c.4 1.5 1 2 2 2s1.6-.5 2-2l1-3.5c.5-1 1-2 1-3.5 0-2.5-2-4-4-4z" />
+      <circle cx="12" cy="5" r="2" />
+    </svg>
+  ),
+  "Orthodontics (Braces & Aligners)": (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} className="w-7 h-7">
+      <rect x="3" y="9" width="18" height="6" rx="3" />
+      <line x1="7" y1="9" x2="7" y2="15" />
+      <line x1="12" y1="9" x2="12" y2="15" />
+      <line x1="17" y1="9" x2="17" y2="15" />
+      <line x1="3" y1="12" x2="21" y2="12" />
+    </svg>
+  ),
+  "Oral & Maxillofacial Surgery": (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} className="w-7 h-7">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3C8 3 5 6 5 9.5c0 2 .8 3.8 2 5L9 20c.6 1.5 1.5 2 3 2s2.4-.5 3-2l2-5.5c1.2-1.2 2-3 2-5C19 6 16 3 12 3z" />
+      <line x1="9" y1="11" x2="15" y2="11" strokeLinecap="round" />
+      <line x1="12" y1="8" x2="12" y2="14" strokeLinecap="round" />
+    </svg>
+  ),
+  "Periodontics & Laser Dentistry (Gum Care & Advanced Laser Treatments)": (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} className="w-7 h-7">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 21C7 21 3 17 3 12S7 3 12 3s9 4 9 9-4 9-9 9z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8 12s1-2 4-2 4 2 4 2" />
+    </svg>
+  ),
+  "Laser Treatments": (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} className="w-7 h-7">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+    </svg>
+  ),
+  "Prosthodontics (Replacement of Missing Teeth)": (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} className="w-7 h-7">
+      <rect x="4" y="13" width="4" height="7" rx="1.5" />
+      <rect x="10" y="10" width="4" height="10" rx="1.5" />
+      <rect x="16" y="13" width="4" height="7" rx="1.5" />
+      <path strokeLinecap="round" d="M4 13C4 9 8 6 12 6s8 3 8 7" />
+    </svg>
+  ),
+  "Pedodontics (Children's Dentistry)": (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} className="w-7 h-7">
+      <circle cx="12" cy="8" r="4" />
+      <path strokeLinecap="round" d="M8 16c0-2 1.8-3 4-3s4 1 4 3v2H8v-2z" />
+      <path strokeLinecap="round" d="M5 21c0-2.5 3-4 7-4s7 1.5 7 4" />
+    </svg>
+  ),
+  "Cosmetic Dentistry": (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} className="w-7 h-7">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3l1.5 4.5H18l-3.75 2.75 1.5 4.5L12 12l-3.75 2.75 1.5-4.5L6 7.5h4.5L12 3z" />
+      <path strokeLinecap="round" d="M8 17c1 1.5 2.5 2 4 2s3-.5 4-2" />
+    </svg>
+  ),
+  "Oral Medicine and Radiology": (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} className="w-7 h-7">
+      <rect x="3" y="5" width="18" height="14" rx="2" />
+      <circle cx="12" cy="12" r="3" />
+      <line x1="12" y1="5" x2="12" y2="9" />
+      <line x1="12" y1="15" x2="12" y2="19" />
+      <line x1="3" y1="12" x2="9" y2="12" />
+      <line x1="15" y1="12" x2="21" y2="12" />
+    </svg>
+  ),
+};
+
 /* ---------- DATA ---------- */
 
 const services = [
@@ -89,7 +165,7 @@ const services = [
     ],
   },
   {
-    title: "Pedodontics (Children’s Dentistry)",
+    title: "Pedodontics (Children's Dentistry)",
     items: [
       "Fluoride therapy",
       "Pit and fissure sealants",
@@ -126,44 +202,66 @@ const services = [
 
 export default function ServicesGridPage() {
   return (
-    <section id="services" className="bg-white px-6 py-28">
+    <section id="services" className="bg-gray-50 px-6 py-28">
       <div className="max-w-6xl mx-auto">
-        {/* HEADER */}
+
+        {/* ── HEADER ── */}
         <header className="mb-20">
-          <p className="text-sm tracking-widest text-blue-600 uppercase mb-3">
+          {/* Highlighted pill badge */}
+          <div className="inline-flex items-center gap-2 bg-blue-600 text-white text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full mb-5 shadow-md shadow-blue-200">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 2C9 2 6 4.5 6 7.5c0 1.5.5 3 1 4.5L8 17c.5 2 1.5 3 2.5 3s1.5-1 2-2c.5 1 1 2 2 2s2-1 2.5-3l1-5c.5-1.5 1-3 1-4.5C19 4.5 15 2 12 2z" />
+            </svg>
             Treatments Offered
-          </p>
+          </div>
+
           <h1 className="text-4xl md:text-5xl font-semibold text-gray-900">
             Comprehensive Dental Services
           </h1>
+          <p className="mt-4 text-gray-500 max-w-xl">
+            From routine check-ups to advanced laser procedures — all under one roof, delivered by specialists.
+          </p>
         </header>
 
-        {/* GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 border-2 border-dotted border-gray-300">
-          {services.map((service, index) => (
+        {/* ── GRID ── */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {services.map((service) => (
             <div
               key={service.title}
-              className={`border-2 border-dotted border-gray-300 p-8
-                ${index % 2 === 0 ? "border-r-2" : ""}
-              `}
+              className="group bg-white rounded-2xl p-8 border border-gray-100 shadow-sm
+                hover:-translate-y-1 hover:shadow-lg hover:border-blue-100
+                transition-all duration-300 border-l-4 border-l-blue-500"
             >
-              {/* TITLE */}
-              <h2 className="text-xl font-semibold text-gray-900 mb-4">
-                {service.title}
-              </h2>
+              {/* Icon + Title row */}
+              <div className="flex items-start gap-4 mb-5">
+                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600">
+                  {icons[service.title]}
+                </div>
+                <h2 className="text-lg font-semibold text-gray-900 leading-snug pt-1">
+                  {service.title}
+                </h2>
+              </div>
 
-              {/* ITEMS */}
-              <ul className="space-y-2 text-gray-700 leading-relaxed">
+              {/* Divider */}
+              <div className="h-px bg-gray-100 mb-5" />
+
+              {/* Treatment list */}
+              <ul className="space-y-2">
                 {service.items.map((item) => (
-                  <li key={item} className="flex gap-3">
-                    <span className="text-blue-600">•</span>
-                    <span>{item}</span>
+                  <li key={item} className="flex items-start gap-3">
+                    <span className="mt-1 w-5 h-5 flex-shrink-0 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold">
+                      ✓
+                    </span>
+                    <span className="text-sm text-gray-600 leading-relaxed">
+                      {item}
+                    </span>
                   </li>
                 ))}
               </ul>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

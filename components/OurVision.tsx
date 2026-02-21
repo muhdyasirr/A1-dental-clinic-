@@ -22,8 +22,8 @@ export default function OurVisionPerson() {
                             <Image
                                 src="/vision.PNG"
                                 alt="Vision Person"
-                                width={350}     // adjust if needed
-                                height={400}    // adjust if needed
+                                width={330}     // adjust if needed
+                                height={370}    // adjust if needed
                                 className="object-contain"
                                 priority
                             />
@@ -42,11 +42,7 @@ export default function OurVisionPerson() {
 
                         <p className="text-gray-700 leading-relaxed text-lg">
 
-                            Mr. P. B. Viswanathan is the Managing Director of A1 Dental Clinic & Aesthetic Centre and the guiding force behind its vision, values, and growth. With an illustrious career spanning 36 years of dedicated service at the Naval Base, Kochi, he brings exceptional discipline, leadership, and administrative excellence to the organization.
-
-                            After retiring from the Naval Base, Kochi, he has been actively involved in establishing and nurturing the clinic, ensuring smooth functioning and a patient-friendly environment. His vast experience in management and commitment to service have played a vital role in building the clinic into a trusted and well-organized healthcare center.
-                            <br /><br />
-                            Under his constant guidance and supervision, the clinic continues to grow and provide quality dental care. Fondly regarded as the pillar and mentor of the institution, his presence creates a positive and well-coordinated atmosphere for both doctors and patients alike
+                            Mr. P. B. Viswanathan is the Managing Director of A1 Dental Clinic & Aesthetic Centre, providing strategic leadership and administrative direction that drive the clinic’s vision and growth. As the driving force behind the institution, he is committed to excellence, ensures high standards of patient care, fostering advanced infrastructure, and a comfortable, patient-centered dental experience.
                         </p>
                     </div>
 

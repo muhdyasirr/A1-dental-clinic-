@@ -16,55 +16,69 @@ export default function DentistSection() {
     fetch("/api/dentists")
       .then(res => res.json())
       .then(data => {
-        if (Array.isArray(data)) {
-          setDentists(data);
-        } else {
-          setDentists([]);
-        }
+        if (Array.isArray(data)) setDentists(data);
+        else setDentists([]);
       })
       .catch(() => setDentists([]));
   }, []);
 
   return (
-    <section className="bg-white py-28 px-8" id="doctors">
-      
-      {/* SECTION TITLE */}
-      <h2 className="text-4xl md:text-5xl font-serif text-gray-900 text-center mb-20">
-        Our Specialists
-      </h2>
+    <section
+      id="doctors"
+      className="py-24 px-6"
+      style={{ background: "linear-gradient(135deg, #e8f0fb 0%, #f0f6ff 60%, #ddeeff 100%)" }}
+    >
+      <div className="max-w-7xl mx-auto">
 
-      {/* GRID */}
-      <div className="grid md:grid-cols-3 gap-16 max-w-7xl mx-auto border-2 ">
-        {dentists.map((doc) => (
-          <Link
-            key={doc._id}
-            href={`/dentists/${doc._id}`}
-            className="group block"
-          >
-            <div className="space-y-6 text-center">
+        {/* ── HEADER ── */}
+        <div className="text-center mb-16">
+          <p className="text-sm tracking-widest text-blue-600 font-semibold uppercase mb-3">
+            Meet The Team
+          </p>
+          <h2 className="text-4xl md:text-5xl font-semibold text-gray-900">
+            Our Specialists
+          </h2>
+          <p className="mt-4 text-gray-500 max-w-lg mx-auto text-sm leading-relaxed">
+            We are committed to providing exceptional, personalised dental care with our dedicated team of specialists.
+          </p>
+        </div>
 
-              {/* BIG IMAGE */}
-              <div className="relative w-full aspect-[3/4] overflow-hidden">
-                <img
-                  src={doc.imageUrl}
-                  alt={doc.name}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
+        {/* ── CARDS ── */}
+        <div className="flex flex-wrap justify-center gap-6">
+          {dentists.map((doc) => (
+            <Link
+              key={doc._id}
+              href={`/dentists/${doc._id}`}
+              className="group flex-shrink-0 w-64 md:w-72"
+            >
+              <div className="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+
+                {/* PHOTO */}
+                <div className="relative w-full aspect-[3/4] bg-gray-100 overflow-hidden">
+                  <img
+                    src={doc.imageUrl}
+                    alt={doc.name}
+                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  />
+                  {/* subtle gradient at bottom */}
+                  <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white/60 to-transparent" />
+                </div>
+
+                {/* INFO */}
+                <div className="px-5 py-4 text-center">
+                  <h3 className="text-base font-bold text-gray-900 leading-snug">
+                    {doc.name}
+                  </h3>
+                  <p className="mt-1 text-sm text-blue-600 font-medium">
+                    {doc.specialization}
+                  </p>
+                </div>
+
               </div>
+            </Link>
+          ))}
+        </div>
 
-              {/* NAME */}
-              <h3 className="text-xl font-medium text-gray-900 tracking-wide">
-                {doc.name}
-              </h3>
-
-              {/* SPECIALIZATION */}
-              <p className="text-sm uppercase tracking-widest text-gray-500">
-                {doc.specialization}
-              </p>
-
-            </div>
-          </Link>
-        ))}
       </div>
     </section>
   );

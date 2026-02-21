@@ -14,7 +14,7 @@ import FloatingContact from "@/components/FloatingContact";
 export default function Home() {
   return (
     <>
-      <Navbar />
+
       <Hero />
       <Hero2 />
       <Services />
