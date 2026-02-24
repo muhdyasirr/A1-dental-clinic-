@@ -203,26 +203,32 @@ const services = [
 
 export default function ServicesGridPage() {
   return (
-    <section id="services" className="bg-gray-50 px-6 py-28">
-      <div className="max-w-6xl mx-auto">
+    <section id="services" className="bg-[#E9F1FB] relative overflow-hidden px-6 py-28">
+      {/* Decorative subtle blurs for a premium look */}
+      <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/3 w-[800px] h-[800px] bg-white/40 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/3 w-[600px] h-[600px] bg-blue-200/30 rounded-full blur-[100px] pointer-events-none" />
+
+      <div className="max-w-6xl mx-auto relative z-10">
 
         {/* ── HEADER ── */}
-        <Animate className="reveal">
-          <header className="mb-20">
-            <div className="inline-flex items-center gap-2 bg-blue-600 text-white text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full mb-5 shadow-md shadow-blue-200">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 2C9 2 6 4.5 6 7.5c0 1.5.5 3 1 4.5L8 17c.5 2 1.5 3 2.5 3s1.5-1 2-2c.5 1 1 2 2 2s2-1 2.5-3l1-5c.5-1.5 1-3 1-4.5C19 4.5 15 2 12 2z" />
-              </svg>
-              Treatments Offered
-            </div>
-            <h1 className="text-4xl md:text-5xl font-semibold text-gray-900">
-              Comprehensive Dental Services
-            </h1>
-            <p className="mt-4 text-gray-500 max-w-xl">
-              From routine check-ups to advanced laser procedures — all under one roof, delivered by specialists.
-            </p>
-          </header>
-        </Animate>
+        <div className="relative z-10">
+          <Animate className="reveal">
+            <header className="mb-20 text-center md:text-left">
+              <div className="inline-flex items-center gap-2 bg-white text-blue-600 text-xs font-bold tracking-widest uppercase px-5 py-2.5 rounded-full mb-6 shadow-md shadow-blue-900/5 border border-white/60 backdrop-blur-md">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 2C9 2 6 4.5 6 7.5c0 1.5.5 3 1 4.5L8 17c.5 2 1.5 3 2.5 3s1.5-1 2-2c.5 1 1 2 2 2s2-1 2.5-3l1-5c.5-1.5 1-3 1-4.5C19 4.5 15 2 12 2z" />
+                </svg>
+                Treatments Offered
+              </div>
+              <h1 className="text-4xl md:text-5xl font-extrabold text-blue-950 tracking-tight">
+                Comprehensive Dental Services
+              </h1>
+              <p className="mt-4 text-blue-900/70 max-w-xl mx-auto md:mx-0 text-lg font-medium">
+                From routine check-ups to advanced laser procedures — all under one roof, delivered by specialists.
+              </p>
+            </header>
+          </Animate>
+        </div>
 
         {/* ── GRID ── */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -233,27 +239,32 @@ export default function ServicesGridPage() {
               delay={`stagger-${Math.min((index % 4) + 1, 6)}` as "stagger-1"}
             >
               <div
-                className="group bg-white rounded-2xl p-8 border border-gray-100 shadow-sm
-                  hover:-translate-y-1 hover:shadow-lg hover:border-blue-100
-                  transition-all duration-300 border-l-4 border-l-blue-500 h-full"
+                className="group bg-white/80 backdrop-blur-lg rounded-2xl p-8 border border-white shadow-lg shadow-blue-900/5
+                  hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white
+                  transition-all duration-300 h-full relative overflow-hidden flex flex-col"
               >
-                <div className="flex items-start gap-4 mb-5">
+                {/* Visual accent bar at top */}
+                <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-blue-400 to-blue-600 opacity-80 group-hover:opacity-100 transition-opacity" />
+
+                <div className="flex items-start gap-4 mb-5 relative z-10 mt-2">
                   <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600
-                    transition-transform duration-300 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white">
+                    transition-transform duration-300 group-hover:-rotate-3 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white shadow-sm border border-blue-100/50">
                     {icons[service.title]}
                   </div>
-                  <h2 className="text-lg font-semibold text-gray-900 leading-snug pt-1">
+                  <h2 className="text-lg font-bold text-blue-950 leading-snug pt-1">
                     {service.title}
                   </h2>
                 </div>
-                <div className="h-px bg-gray-100 mb-5" />
-                <ul className="space-y-2">
+
+                <div className="h-px bg-blue-900/5 mb-5 relative z-10" />
+
+                <ul className="space-y-2.5 relative z-10 flex-grow">
                   {service.items.map((item) => (
                     <li key={item} className="flex items-start gap-3">
-                      <span className="mt-1 w-5 h-5 flex-shrink-0 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold">
+                      <span className="mt-0.5 w-5 h-5 flex-shrink-0 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs font-bold shadow-sm">
                         ✓
                       </span>
-                      <span className="text-sm text-gray-600 leading-relaxed">{item}</span>
+                      <span className="text-sm text-blue-900/80 leading-relaxed font-medium">{item}</span>
                     </li>
                   ))}
                 </ul>
