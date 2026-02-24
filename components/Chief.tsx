@@ -1,53 +1,67 @@
 "use client";
 
 import Image from "next/image";
+import Animate from "./Animate";
 
-export default function OurVisionPerson() {
+export default function ChiefSection() {
     return (
-        <section className="bg-white py-24 px-4 sm:px-6 lg:px-8">
+        <section className="bg-white py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
             <div className="max-w-7xl mx-auto">
 
                 {/* SECTION HEADING */}
-                <h2 className="text-center text-2xl tracking-widest text-gray-500 uppercase mb-16">
-                    Chief Dental Surgeon
-                </h2>
+                <Animate className="reveal">
+                    <h2 className="text-center text-2xl tracking-widest text-gray-500 uppercase mb-16">
+                        Chief Dental Surgeon
+                    </h2>
+                </Animate>
 
                 {/* CONTENT */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-                    {/* IMAGE */}
-
-                    <div className="flex justify-center lg:justify-start">
-                        <div className="shadow-xl bg-gray-50 p-4">
-                            <Image
-                                src="/Chief.jpeg"
-                                alt="Vision Person"
-                                width={420}     // adjust if needed
-                                height={420}    // adjust if needed
-                                className="object-contain"
-                                priority
-                            />
+                    {/* IMAGE — slides from left */}
+                    <Animate className="reveal-left">
+                        <div className="flex justify-center lg:justify-start">
+                            <div className="shadow-xl bg-gray-50 p-4 transition-all duration-500
+                                hover:shadow-2xl hover:shadow-blue-100 hover:-translate-y-2">
+                                <Image
+                                    src="/Chief.jpeg"
+                                    alt="Chief Dental Surgeon"
+                                    width={420}
+                                    height={420}
+                                    className="object-contain"
+                                    priority
+                                />
+                            </div>
                         </div>
-                    </div>
+                    </Animate>
 
-                    {/* TEXT CONTENT */}
-                    <div>
-                        <h3 className="text-3xl font-semibold text-gray-900 mb-3">
-                            Dr. Vyshakh Viswanath
-                        </h3>
+                    {/* TEXT — slides from right */}
+                    <Animate className="reveal-right">
+                        <div>
+                            <h3 className="text-3xl font-semibold text-gray-900 mb-3">
+                                Dr. Vyshakh Viswanath
+                            </h3>
 
-                        <p className="text-base text-gray-500 mb-8">
-                            Chief Dental Surgeon
-                        </p>
+                            <p className="text-base text-blue-600 font-medium mb-8">
+                                Chief Dental Surgeon
+                            </p>
 
-                        <p className="text-gray-700 leading-relaxed text-lg">
+                            {/* Highlight badges */}
+                            <div className="flex flex-wrap gap-3 mb-8">
+                                {["BDS Graduate 2019", "6+ Years Experience", "FAD – Germany"].map((badge) => (
+                                    <span key={badge}
+                                        className="px-4 py-1.5 rounded-full bg-blue-50 text-blue-700 text-sm font-medium
+                                            border border-blue-100 hover:bg-blue-600 hover:text-white transition-colors duration-300 cursor-default">
+                                        {badge}
+                                    </span>
+                                ))}
+                            </div>
 
-                            Dr. Vyshakh Viswanath is the Chief Dental Surgeon of our clinic, dedicated to delivering high-quality, patient-centered dental care with a focus on aesthetics and long-term oral health.
-
-                            He completed his Bachelor of Dental Surgery (BDS) in 2019 and has over 6+ years of clinical experience in dentistry. He further enhanced his expertise by earning a Fellowship in Aesthetic Dentistry (FAD) from Universitätsmedizin Greifswald, Germany, reflecting his commitment to advanced and contemporary dental care.
-                            <br /><br />
-                            Dr. Vyshakh has worked in several reputed hospitals and dental centers across Kerala, gaining extensive clinical exposure in various branches of dentistry. He is currently serving as a faculty member at Amrita School of Dentistry, Kochi, where he is actively involved in academic and clinical training.                        </p>
-                    </div>
+                            <p className="text-gray-700 leading-relaxed text-lg">
+                                Dr. Vyshakh Viswanath, Chief Dental Surgeon of our clinic, is committed to providing high-quality, patient-centered dental care with a strong emphasis on aesthetics and long-term oral health. A Bachelor of Dental Surgery (BDS) graduate (2019) with over six years of clinical experience, he further advanced his expertise by completing a Fellowship in Aesthetic Dentistry (FAD) from Universitätsmedizin Greifswald, Germany. Dr. Vyshakh has gained extensive clinical exposure through his work at reputed hospitals and dental centers across Kerala and currently serves as a faculty member at Amrita School of Dentistry, Kochi, where he actively contributes to academic and clinical training.
+                            </p>
+                        </div>
+                    </Animate>
 
                 </div>
             </div>

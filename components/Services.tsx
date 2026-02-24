@@ -1,6 +1,7 @@
 "use client";
 
 import { ReactNode } from "react";
+import Animate from "./Animate";
 
 /* ---------- ICONS ---------- */
 
@@ -206,59 +207,58 @@ export default function ServicesGridPage() {
       <div className="max-w-6xl mx-auto">
 
         {/* ── HEADER ── */}
-        <header className="mb-20">
-          {/* Highlighted pill badge */}
-          <div className="inline-flex items-center gap-2 bg-blue-600 text-white text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full mb-5 shadow-md shadow-blue-200">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M12 2C9 2 6 4.5 6 7.5c0 1.5.5 3 1 4.5L8 17c.5 2 1.5 3 2.5 3s1.5-1 2-2c.5 1 1 2 2 2s2-1 2.5-3l1-5c.5-1.5 1-3 1-4.5C19 4.5 15 2 12 2z" />
-            </svg>
-            Treatments Offered
-          </div>
-
-          <h1 className="text-4xl md:text-5xl font-semibold text-gray-900">
-            Comprehensive Dental Services
-          </h1>
-          <p className="mt-4 text-gray-500 max-w-xl">
-            From routine check-ups to advanced laser procedures — all under one roof, delivered by specialists.
-          </p>
-        </header>
+        <Animate className="reveal">
+          <header className="mb-20">
+            <div className="inline-flex items-center gap-2 bg-blue-600 text-white text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full mb-5 shadow-md shadow-blue-200">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 2C9 2 6 4.5 6 7.5c0 1.5.5 3 1 4.5L8 17c.5 2 1.5 3 2.5 3s1.5-1 2-2c.5 1 1 2 2 2s2-1 2.5-3l1-5c.5-1.5 1-3 1-4.5C19 4.5 15 2 12 2z" />
+              </svg>
+              Treatments Offered
+            </div>
+            <h1 className="text-4xl md:text-5xl font-semibold text-gray-900">
+              Comprehensive Dental Services
+            </h1>
+            <p className="mt-4 text-gray-500 max-w-xl">
+              From routine check-ups to advanced laser procedures — all under one roof, delivered by specialists.
+            </p>
+          </header>
+        </Animate>
 
         {/* ── GRID ── */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {services.map((service) => (
-            <div
+          {services.map((service, index) => (
+            <Animate
               key={service.title}
-              className="group bg-white rounded-2xl p-8 border border-gray-100 shadow-sm
-                hover:-translate-y-1 hover:shadow-lg hover:border-blue-100
-                transition-all duration-300 border-l-4 border-l-blue-500"
+              className="reveal"
+              delay={`stagger-${Math.min((index % 4) + 1, 6)}` as "stagger-1"}
             >
-              {/* Icon + Title row */}
-              <div className="flex items-start gap-4 mb-5">
-                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600">
-                  {icons[service.title]}
+              <div
+                className="group bg-white rounded-2xl p-8 border border-gray-100 shadow-sm
+                  hover:-translate-y-1 hover:shadow-lg hover:border-blue-100
+                  transition-all duration-300 border-l-4 border-l-blue-500 h-full"
+              >
+                <div className="flex items-start gap-4 mb-5">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600
+                    transition-transform duration-300 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white">
+                    {icons[service.title]}
+                  </div>
+                  <h2 className="text-lg font-semibold text-gray-900 leading-snug pt-1">
+                    {service.title}
+                  </h2>
                 </div>
-                <h2 className="text-lg font-semibold text-gray-900 leading-snug pt-1">
-                  {service.title}
-                </h2>
+                <div className="h-px bg-gray-100 mb-5" />
+                <ul className="space-y-2">
+                  {service.items.map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <span className="mt-1 w-5 h-5 flex-shrink-0 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold">
+                        ✓
+                      </span>
+                      <span className="text-sm text-gray-600 leading-relaxed">{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-
-              {/* Divider */}
-              <div className="h-px bg-gray-100 mb-5" />
-
-              {/* Treatment list */}
-              <ul className="space-y-2">
-                {service.items.map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <span className="mt-1 w-5 h-5 flex-shrink-0 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold">
-                      ✓
-                    </span>
-                    <span className="text-sm text-gray-600 leading-relaxed">
-                      {item}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            </Animate>
           ))}
         </div>
 

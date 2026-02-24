@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import React from "react";
+import Animate from "./Animate";
 
 export default function ContactConsultation() {
   return (
@@ -11,130 +12,114 @@ export default function ContactConsultation() {
     >
       <div className="max-w-7xl mx-auto grid gap-14 lg:grid-cols-2 lg:gap-24 items-center">
 
-        {/* CONTENT — FIRST ON MOBILE */}
-        <div className="max-w-xl mx-auto lg:mx-0 order-1">
-          {/* LABEL */}
-          <p className="text-xs sm:text-sm tracking-widest text-blue-600 font-semibold uppercase mb-5 sm:mb-6">
-            + Contact Now
-          </p>
+        {/* CONTENT */}
+        <Animate className="reveal-left">
+          <div className="max-w-xl mx-auto lg:mx-0 order-1">
+            {/* LABEL */}
+            <p className="text-xs sm:text-sm tracking-widest text-blue-600 font-semibold uppercase mb-5 sm:mb-6">
+              + Contact Now
+            </p>
 
-          {/* TITLE */}
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-snug">
-            Get Professional
-            <br className="hidden sm:block" />
-            Consultation
-          </h2>
+            {/* TITLE */}
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-snug">
+              Get Professional
+              <br className="hidden sm:block" />
+              Consultation
+            </h2>
 
-          {/* INFO LIST */}
-          <div className="mt-10 sm:mt-12 space-y-6 sm:space-y-8">
-            <InfoItem
-              icon={<LocationIcon />}
-              title={
-                <>
-                  A1 Dental Clinic & Aesthetic Centre,<br />
-                  Chettimukku Junction, TOG Road,<br />
-                  South Kalamassery,<br />
-                  Ernakulam – 683104
-                </>
-              }
-            />
+            {/* INFO LIST */}
+            <div className="mt-10 sm:mt-12 space-y-6 sm:space-y-8">
+              <InfoItem
+                icon={<LocationIcon />}
+                title={
+                  <>
+                    A1 Dental Clinic & Aesthetic Centre,<br />
+                    Chettimukku Junction, TOG Road,<br />
+                    South Kalamassery,<br />
+                    Ernakulam – 683104
+                  </>
+                }
+              />
 
-            <InfoItem
-              icon={<PhoneIcon />}
-              title={
-                <a
-                  href="tel:9562603990"
-                  className="hover:text-blue-600 transition"
-                >
-                  9562603990
-                </a>
-              }
-            />
+              <InfoItem
+                icon={<PhoneIcon />}
+                title={
+                  <a
+                    href="tel:9562603990"
+                    className="hover:text-blue-600 transition"
+                  >
+                    9562603990
+                  </a>
+                }
+              />
 
-            <InfoItem
-              icon={<MailIcon />}
-              title={
-                <a
-                  href="mailto:a1dentalclinickalamassery@gmail.com"
-                  className="hover:text-blue-600 transition break-all"
-                >
-                  a1dentalclinickalamassery@gmail.com
-                </a>
-              }
-            />
+              <InfoItem
+                icon={<MailIcon />}
+                title={
+                  <a
+                    href="mailto:a1dentalclinickalamassery@gmail.com"
+                    className="hover:text-blue-600 transition break-all"
+                  >
+                    a1dentalclinickalamassery@gmail.com
+                  </a>
+                }
+              />
 
-            <InfoItem
-              icon={<ClockIcon />}
-              title={
-                <>
-                  Mon – Sat : 9:30 AM – 7:30 PM<br />
-                  Sunday : Appointment Only
-                </>
-              }
-            />
-          </div>
+              <InfoItem
+                icon={<ClockIcon />}
+                title={
+                  <>
+                    Mon – Sat : 9:30 AM – 7:30 PM<br />
+                    Sunday : Appointment Only
+                  </>
+                }
+              />
+            </div>
 
-          {/* CTA */}
-          <div className="mt-12 sm:mt-14">
-            <Link
-              href="tel:9562603990"
-              className="
+            {/* CTA */}
+            <div className="mt-12 sm:mt-14">
+              <Link
+                href="tel:9562603990"
+                className="
                 inline-flex w-full sm:w-auto
                 items-center justify-center gap-3
                 bg-blue-600 text-white
                 px-8 py-4 rounded-full
                 text-sm sm:text-base font-semibold
                 shadow-lg shadow-blue-600/30
-                hover:bg-blue-700 transition
+                hover:bg-blue-700 hover:scale-105 transition-all duration-300
               "
-            >
-              Call For Appointment
-              <span className="inline-flex w-7 h-7 items-center justify-center rounded-full bg-white/20">
-                ↗
-              </span>
-            </Link>
+              >
+                Call For Appointment
+                <span className="inline-flex w-7 h-7 items-center justify-center rounded-full bg-white/20">
+                  ↗
+                </span>
+              </Link>
+            </div>
           </div>
-        </div>
+        </Animate>
 
-        {/* MAP — MOBILE SAFE */}
-        <div className="w-full order-2 lg:order-none">
-          <div
-            className="
-              relative w-full
-              h-[280px] sm:h-[360px] lg:h-[420px]
-              rounded-3xl
-              overflow-hidden
-              shadow-xl
-              border border-gray-100
-              bg-gray-100
-            "
-          >
-            {/* GOOGLE MAP */}
-            <iframe
-              src="https://maps.google.com/maps?q=A1+dental+clinic+and+aesthetic+centre+South+kalamassery+Ernakulam&output=embed"
-              className="absolute inset-0 w-full h-full border-0"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-
-            {/* MOBILE OVERLAY — PREVENT SCROLL HIJACK */}
-            <a
-              href="https://maps.google.com/?q=A1+dental+clinic+and+aesthetic+centre+South+kalamassery+Ernakulam"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="
-                absolute inset-0
-                sm:hidden
-                flex items-end justify-center
-                bg-gradient-to-t from-black/30 to-transparent
-              "
-            >
-              <span className="mb-4 px-4 py-2 text-sm font-semibold text-white bg-black/60 rounded-full">
-                Open in Maps
-              </span>
-            </a>
+        {/* MAP */}
+        <Animate className="reveal-right">
+          <div className="w-full order-2 lg:order-none">
+            <div className="relative w-full h-[280px] sm:h-[360px] lg:h-[420px] rounded-3xl overflow-hidden shadow-xl border border-gray-100 bg-gray-100">
+              <iframe
+                src="https://maps.google.com/maps?q=A1+dental+clinic+and+aesthetic+centre+South+kalamassery+Ernakulam&output=embed"
+                className="absolute inset-0 w-full h-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+              <a
+                href="https://maps.google.com/?q=A1+dental+clinic+and+aesthetic+centre+South+kalamassery+Ernakulam"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute inset-0 sm:hidden flex items-end justify-center bg-gradient-to-t from-black/30 to-transparent"
+              >
+                <span className="mb-4 px-4 py-2 text-sm font-semibold text-white bg-black/60 rounded-full">Open in Maps</span>
+              </a>
+            </div>
           </div>
-        </div>
+        </Animate>
 
       </div>
     </section>
