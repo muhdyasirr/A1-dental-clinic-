@@ -58,8 +58,7 @@ export default function ChiefSection() {
                             </div>
 
                             <p className="text-gray-700 leading-relaxed text-lg">
-                                Dr. Vyshakh Viswanath, Chief Dental Surgeon of our clinic, is committed to providing high-quality, patient-centered dental care with a strong emphasis on aesthetics and long-term oral health. A Bachelor of Dental Surgery (BDS) graduate (2019) with over six years of clinical experience, he further advanced his expertise by completing a Fellowship in Aesthetic Dentistry (FAD) from Universitätsmedizin Greifswald, Germany. Dr. Vyshakh has gained extensive clinical exposure through his work at reputed hospitals and dental centers across Kerala and currently serves as a faculty member at Amrita School of Dentistry, Kochi, where he actively contributes to academic and clinical training.
-                            </p>
+Dr. Vyshakh Viswanath, Chief Dental Surgeon, delivers patient-centered dental care with a strong focus on aesthetics and long-term oral health. A BDS graduate (2019) with 6+ years of clinical experience, he holds a Fellowship in Aesthetic Dentistry (FAD) from Universitätsmedizin Greifswald, Germany. He has worked with leading dental centers across Kerala and currently serves as a faculty member at Amrita School of Dentistry, Kochi, contributing to both clinical practice and academic training.                            </p>
                         </div>
                     </Animate>
 
