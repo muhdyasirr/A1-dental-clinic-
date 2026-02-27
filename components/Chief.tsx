@@ -48,7 +48,7 @@ export default function ChiefSection() {
 
                             {/* Highlight badges */}
                             <div className="flex flex-wrap gap-3 mb-8">
-                                {["BDS Graduate 2019", "6+ Years Experience", "FAD – Germany"].map((badge) => (
+                                {["BDS-FAD "].map((badge) => (
                                     <span key={badge}
                                         className="px-4 py-1.5 rounded-full bg-blue-50 text-blue-700 text-sm font-medium
                                             border border-blue-100 hover:bg-blue-600 hover:text-white transition-colors duration-300 cursor-default">
